@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            table,td,th{
+                border: 5px solid black;
+                border-collapse: collapse;
+                text-align: center;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <script>
+            function myfunc(){
+
+                var text=document.getElementById("name").value.toUpperCase();
+                document.getElementById("name").value=text;
+                document.forms[1].user.focus();
+            }
+        </script>
+        <center>
+            <form id="form" method="get/post">
+                <label>Name: <input type="text" id="name" class="name"></label>
+                <label>Mobile Number: <input type="tel" id="tel" maxlength="10"></label>
+                <label>Subjects: </label>
+                <input type="checkbox"><label>HINDI</label>
+                <select id="courses">
+                    <option value="C++">C++</option>
+                </select>
+                <label>Submit: <input type="button" onclick="myfunc()"></label>
+            </form>
+        </center>
+        <table>
+
+            <tr>
+                <th>Name</th>
+                <th>Phone num</th>
+                <th>insert image</th>
+            </tr>
+            <tr>
+                <td rowspan="2">AAA</td>
+                <TD>No 1</TD>
+                <td rowspan="2">Image</td>
+            </tr>
+            <tr>
+                
+                <td>No 2</td>
+                
+            </tr>
+            <tr>
+                <td>BBB</td>
+                <td>No3</td>
+                <td>Image</td>
+            </tr>
+        </table>
+        
+    </body>
+</html>

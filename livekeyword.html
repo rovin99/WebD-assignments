@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>search name </title>
+    </head>
+    <body>
+
+        <input id="textBox" type="text"></input>
+        <div id="output"></div>
+        <script>
+
+            const text=document.querySelector('#textBox');
+            const output=document.querySelector('#output');
+
+            
+
+            text.addEventListener('keydown',event=>{
+                output.textContent=event.key;
+            });
+        </script>
+
+    </body>
+</html>

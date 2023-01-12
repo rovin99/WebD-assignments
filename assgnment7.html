@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Leap year</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
+rel="stylesheet">
+ <link rel="stylesheet" href="style7.css">
+
+</head>
+<body>
+    <center>
+    <h1>Enter year to find if its leap year or not</h1>
+    
+        <div>
+            <label for="yearinput" id="year">Enter Year: </label>
+            <input type="tel" id="yearinput" maxlength="4">
+            <button onclick="cal_length()" id="ans">Submit</button>
+            <div class="text_area">
+                <input type="text" id="leapYear">
+            </div> 
+            <script>
+                function cal_length() {
+                    var year=document.getElementById("yearinput").value;
+                    
+                    if ((year % 4 === 0) && (year % 100 != 0) || (year % 400 === 0)) {
+                        document.getElementById("ans").value=year;
+                    } else {
+                        document.getElementById("ans").value=year;
+                    }
+                }
+            </script>
+        
+        </div>
+
+    </center>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<body>
+<center>
+<fieldset>
+<legend>Registration</legend>
+<script>  
+    function anyChar(str){
+        return /\S+/.test(str);
+    }
+    function validate(){
+
+
+        var firstname=document.form.first.value;
+        var lastname=document.form.lastn.value;
+        var pass=document.form.pwd.value;
+        var email=document.form.email.value;
+        var phone=document.form.ph.value;
+        var address=document.form.add.value;
+
+        var emailreg=new RegExp("^[a-zA-Z][a-zA-Z0-9_.]*@[a-zA-Z][a-zA-Z0-9_.]*.[a-zA-Z][a-zA-Z0-9_.]{2}.[a-zA-Z][a-zA-Z0-9_.]{2}$|^[a-zA-Z][a-zA-Z0-9_.]*@[a-zA-Z][a-zA-Z0-9_.]*.[a-zA-Z][a-zA-Z0-9_.]{3}$");
+        var userreg=new RegExp("^[a-zA-Z][a-zA-Z0-9]*$");
+        
+        var phreg=new RegExp("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im");
+        var ruser=userreg.exec(firstname);
+        
+        var remail=emailreg.exec(email);
+        var phreg=new RegExp("^[0-9]{10}$");
+        var rph=phreg.exec(phone);
+        if(!ruser) { alert("firstname invalid");}
+        if(!anyChar(lastname)){
+            alert("lastname cannot be empty! ");document.forms[1].user.focus();
+        }
+        if(pass.length<6){
+            alert("password invalid");document.forms[1].user.focus();
+        }
+        if(!remail) { alert("email invalid");document.forms[1].user.focus();}
+        if(!rph) { alert("phone number invalid");document.forms[1].ph.focus();}	
+        if(!anyChar(address)){
+            alert("address cannot be empty! ");document.forms[1].user.focus();
+        }
+        else{
+            alert("ALL ANSWERS WERE VALID!");
+        }
+    }
+    
+</script>  
+<form name="form" onsubmit="return validate()"">
+<pre>
+First Name: <input type="text" name="first" size="10"><br>
+Last Name: <input type="text" name="lastn" size="10"><br>
+Password: <input type="password" name="pwd" size="10"><br>
+E-mail: <input type="text" name="email" size="10"><br>
+Phone Number: <input type="text" name="ph" size="10"><br>
+Address: <input type="text" name="add" size="10"><br>
+<input type="submit" value="Register">
+</pre>
+</form>
+</fieldset>
+</center>
+</body>
+
+</html>
+

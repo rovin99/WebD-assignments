@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Number guessing game</title>
+
+    
+  </head>
+
+  <body>
+      <button>Press Me</button>
+
+</body>
+
+<script>
+    const button=document.querySelector("button");
+
+    function greet(){
+        const name=prompt("What\'s your name?");
+        const text=document.createElement('p');
+        text.textContent=`Hi ${name}`;
+        document.body.append(text);
+    }
+    button.addEventListener("click",greet);
+</script>
+</html>
